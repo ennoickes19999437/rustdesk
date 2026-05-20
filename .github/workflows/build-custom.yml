@@ -25,7 +25,9 @@ jobs:
 
       - name: Set app name
         run: |
-          (Get-Content Cargo.toml) -replace 'name = "rustdesk"', 'name = "Otterleicht-IT-Support"' |
+          (Get-Content Cargo.toml) `
+            -replace 'name = "rustdesk"', 'name = "Otterleicht-IT-Support"' `
+            -replace 'default-run = "rustdesk"', 'default-run = "Otterleicht-IT-Support"' |
           Set-Content Cargo.toml
         shell: pwsh
 
